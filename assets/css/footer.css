@@ -116,6 +116,7 @@ footer {
   list-style-type: none;
   float: right;
   margin-bottom: 0px;
+  padding-top: 4px;
 }
 
 .bottom_ul li {
