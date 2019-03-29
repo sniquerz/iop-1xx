@@ -22,23 +22,6 @@
   <!--styles used for the footer of the page-->
   <link rel="stylesheet" href="assets/css/footer.css">
 
-  <script>
-    function init() {
-      window.addEventListener('scroll', function(e) {
-        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-          shrinkOn = 300,
-          header = document.querySelector("header");
-        if (distanceY > shrinkOn) {
-          classie.add(header, "smaller");
-        } else {
-          if (classie.has(header, "smaller")) {
-            classie.remove(header, "smaller");
-          }
-        }
-      });
-    }
-    window.onload = init();
-  </script>
 </head>
 
 <body>
@@ -50,7 +33,12 @@
         <h1 id="logo">
           inside out
         </h1>
+<<<<<<< HEAD
         <nav></nav>
+=======
+        <nav>
+        </nav>
+>>>>>>> 101-0
       </div>
     </header><!-- /header -->
 
