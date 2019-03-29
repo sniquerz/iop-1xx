@@ -17,7 +17,7 @@ inside out project version 100.0
         -created assets/data/menu.json
         -moved header resize js to app.js
 
-
+  
 
 
 https://sniquerz.github.io/iop-1xx/.
