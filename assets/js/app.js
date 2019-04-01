@@ -13,13 +13,7 @@ function init() {
       }
     }
   });
- 
-<<<<<<< HEAD
-=======
 
-
-
->>>>>>> 101-0
   $.ajax({
     method: 'GET',
     url: 'assets/data/menu.json',
@@ -32,10 +26,7 @@ function init() {
       if (data.menu.length > 0) {
 
         data.menu.forEach(function(data) {
-<<<<<<< HEAD
 
-=======
->>>>>>> 101-0
           console.log(data.MenuName);
           console.log(data.MenuLink);
 
