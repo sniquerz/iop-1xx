@@ -8,7 +8,7 @@ nav {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   padding-right: 20px;
-}
+} 
 
 nav ul {
   list-style: none;
@@ -42,7 +42,7 @@ nav ul li.current-menu-item {
 
 nav ul li:hover {
   background: #DDD;
-} 
+}
 
 nav ul ul {
   display: none;
