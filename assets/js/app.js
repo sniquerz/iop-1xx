@@ -34,7 +34,6 @@ function init() {
         }
     });
 
-
     $.ajax({
         method: 'GET',
         url: 'assets/data/menu.json',
@@ -54,7 +53,6 @@ function init() {
     });
 
 }
-
 
 function menuBuilder(obj) {
 
