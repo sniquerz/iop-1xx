@@ -3,60 +3,71 @@
 window.onload = init();
 
 function init() {
-  window.addEventListener('scroll', function(e) {
-    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-      shrinkOn = 300,
-      header = document.querySelector("header");
-    if (distanceY > shrinkOn) {
-      classie.add(header, "smaller");
-    } else {
-      if (classie.has(header, "smaller")) {
-        classie.remove(header, "smaller");
-      }
-    }
-  });
 
-  $.ajax({
-    method: 'GET',
-    url: 'assets/data/menu.json',
-    dataType: 'json',
-    success: function (data) {
+    window.addEventListener('scroll', function (e) {
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 300,
+            header = document.querySelector("header");
+        if (distanceY > shrinkOn) {
+            classie.add(header, "smaller");
+        } else {
+            if (classie.has(header, "smaller")) {
+                classie.remove(header, "smaller");
+            }
+        }
+    });
 
-      var menu = menuBuilder(data.menu);
 
-        $('nav').append(menu);
-        
-    },
-    error: function() {
-      console.log('all is not good');
-    }
-  });
+    $.ajax({
+        method: 'GET',
+        url: 'assets/data/menu.json',
+        dataType: 'json',
+        success: function (data) {
+
+            var menu = menuBuilder(data.menu);
+
+            $('nav').append(menu);
+
+        },
+        error: function () {
+
+            console.log('all is not good');
+
+        }
+    });
 
 }
 
+
 function menuBuilder(obj) {
 
-  var theMenu = '';
+    var theMenu = '';
 
-  if (obj.length > 0) {
-    theMenu = theMenu + '<ul>';
-      obj.forEach(function (item) {
+    if (obj.length > 0) {
 
-        theMenu = theMenu + '<li><a href="#">' + item.MenuName + '</a>';
+        theMenu = theMenu + '<ul>';
 
-        if (item.Menus.length > 0) {
-              theMenu = theMenu  + menuBuilder(item.Menus);
-        }
+        obj.forEach(function (item) {
 
-          theMenu = theMenu + '</li>';
+            theMenu = theMenu + '<li><a href="#">' + item.MenuName + '</a>';
 
-});
+            if (item.Menus.length > 0) {
 
-    theMenu = theMenu + '</ul>';
+                theMenu = theMenu + menuBuilder(item.Menus);
 
-  } else {
-    console.log('no data');
-  }
+            }
 
-  return theMenu;
+            theMenu = theMenu + '</li>';
+
+        });
+
+        theMenu = theMenu + '</ul>';
+
+    } else {
+
+        console.log('no data');
+
+    }
+
+    return theMenu;
 }
