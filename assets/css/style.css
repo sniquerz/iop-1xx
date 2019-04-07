@@ -42,7 +42,7 @@ nav ul li.current-menu-item {
 
 nav ul li:hover {
   background: #DDD;
-}
+} 
 
 nav ul ul {
   display: none;
