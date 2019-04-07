@@ -17,7 +17,6 @@ function init() {
         }
     });
 
-
     $.ajax({
         method: 'GET',
         url: 'assets/data/menu.json',
