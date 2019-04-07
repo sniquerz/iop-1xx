@@ -38,7 +38,6 @@ function init() {
 
 }
 
-
 function menuBuilder(obj) {
 
     var theMenu = '';
