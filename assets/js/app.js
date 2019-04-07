@@ -21,25 +21,11 @@ function init() {
     url: 'assets/data/menu.json',
     dataType: 'json',
     success: function (data) {
-      console.log('calling the menuBuilder function');
+
       var menu = menuBuilder(data.menu);
-      console.log('call to menuBuilder function completed');
 
-      console.log(menu);
-      //console.log('all good');
-      //console.log(data.menu.length);
-      //console.log(data.menu);
-
-      //if (data.menu.length > 0) {
-
-      //data.menu.forEach(function(data) {
-
-      //console.log(data.MenuName);
-      //console.log(data.MenuLink);
-
-      //$('nav').append('<a href="' + data.MenuLink + '">' + data.MenuName + '</a>');
-      //});
-      //}
+        $('nav').append(menu);
+        
     },
     error: function() {
       console.log('all is not good');
@@ -54,22 +40,23 @@ function menuBuilder(obj) {
 
   if (obj.length > 0) {
     theMenu = theMenu + '<ul>';
-    obj.forEach(function (item) {
+      obj.forEach(function (item) {
 
-      theMenu = theMenu + '<li><a href="#">' + item.MenuName + '</a>';
+        theMenu = theMenu + '<li><a href="#">' + item.MenuName + '</a>';
 
-      if (item.Menus.length > 0) {
-        theMenu = theMenu + menuBuilder(item.Menus);
-      }
-      theMenu = theMenu + '</li>';
+        if (item.Menus.length > 0) {
+              theMenu = theMenu  + menuBuilder(item.Menus);
+        }
 
-    });
+          theMenu = theMenu + '</li>';
+
+});
 
     theMenu = theMenu + '</ul>';
 
   } else {
     console.log('no data');
   }
-    return theMenu;
-  //console.log('menuBuilder function complete');
+
+  return theMenu;
 }
